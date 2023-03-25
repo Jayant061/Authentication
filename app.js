@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://admin-jayant:jayant108@cluster0.fjrcroq.mongodb.net/userDB?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGOURL + "retryWrites=true&w=majority")
 const userSchema = new mongoose.Schema({
     email:String,
     password:String,
